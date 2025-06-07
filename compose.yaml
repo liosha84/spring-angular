@@ -1,0 +1,36 @@
+services:
+  spring-angular:
+    container_name: spring-angular
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/springangulardb
+      - SPRING_DATASOURCE_USERNAME=admin #your required name
+      - SPRING_DATASOURCE_PASSWORD=postgrespw # your required password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - postgresdb
+    networks:
+      - springangularts
+  postgresdb:
+    container_name: postgresdb
+    image: postgres
+    restart: always
+
+    volumes:
+      #- db-data:/var/lib/postgresql/data
+      - ./springangulardb.sql:/docker-entrypoint-initdb.d/data.sql
+    networks:
+      - springangularts
+    environment:
+      - POSTGRES_DB=springangulardb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=postgrespw
+    expose:
+      - 5432:5432
+networks:
+  springangularts:

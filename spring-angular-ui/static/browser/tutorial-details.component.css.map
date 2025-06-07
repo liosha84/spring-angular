@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/tutorial-details/tutorial-details.component.scss"],
+  "sourcesContent": [".edit-form {\r\n  max-width: 400px;\r\n  margin: auto;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACE,aAAA;AACA,UAAA;;",
+  "names": []
+}

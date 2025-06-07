@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/tutorials-list/tutorials-list.component.scss"],
+  "sourcesContent": [".list {\r\n  text-align: left;\r\n  max-width: 750px;\r\n  margin: auto;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACE,cAAA;AACA,aAAA;AACA,UAAA;;",
+  "names": []
+}

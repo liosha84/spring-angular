@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.scss"],
+  "sourcesContent": ["//#header_panel{\r\n//  background-color: #181d1f;\r\n//}\r\n.example-spacer {\r\n  flex: 1 1 auto;\r\n}\r\n"],
+  "mappings": ";AAGA,CAAA;AACE,QAAA,EAAA,EAAA;;",
+  "names": []
+}

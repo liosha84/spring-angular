@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/dialog/dialog.component.scss"],
+  "sourcesContent": ["\r\n.fillField{\r\n  width: 100%;\r\n};\r\n"],
+  "mappings": ";AACA,CAAA;AACE,SAAA;;",
+  "names": []
+}
