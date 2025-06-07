@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import {FormsModule} from "@angular/forms";
-import {NgIf} from "@angular/common";
+
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     imports: [
-        FormsModule,
-        NgIf
-    ],
+    FormsModule
+],
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
