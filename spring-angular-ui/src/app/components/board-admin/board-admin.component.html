@@ -1,48 +1,51 @@
 <div class="col-md-6">
   <h4>Users List</h4>
   <ul class="list-group">
-    @for (row of rowData; track row; let i = $index) {
-      <li
-        class="list-group-item"
-        >
-        {{ row.username }}
-        {{ row.email}}
-        {{ row.password}}
-        <form>
-          <mat-form-field class="example-chip-list">
-            <mat-chip-grid #chipGrid aria-label="Role selection">
-              @for (role of row.roles; track $index) {
-                <mat-chip-row (removed)="remove(role)">
-                  {{role.name}}
-                  <button matChipRemove [attr.aria-label]="'remove ' + role.name">
-                    <mat-icon>cancel</mat-icon>
-                  </button>
-                </mat-chip-row>
-              }
-            </mat-chip-grid>
-            <input
-              name="currentFruit"
-              placeholder="Add role..."
-              #fruitInput
-              [(ngModel)]="currentRole"
-              [matChipInputFor]="chipGrid"
-              [matAutocomplete]="auto"
-              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              [formControl]="myControl"
-              (matChipInputTokenEnd)="add($event)"
-              (input)="change($event,filteredRoles(row.roles))"
-              />
-              <mat-autocomplete [formControl]="ac" autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selected(row.roles,$event); ">
-                @for (role of filteredRoles(row.roles); track role) {
-                  <mat-option  [value]="role">{{role.name}}</mat-option>
-                }
-              </mat-autocomplete>
-            </mat-form-field>
-          </form>
-        </li>
-      }
+    <li
+      class="list-group-item"
+      *ngFor="let row of rowData; let i = index"
 
-    </ul>
+    >
+      {{ row.username }}
 
-  </div>
+      {{ row.email}}
+      {{ row.password}}
+
+      <form>
+      <mat-form-field class="example-chip-list">
+      <mat-chip-grid #chipGrid aria-label="Role selection">
+        @for (role of row.roles; track $index) {
+          <mat-chip-row (removed)="remove(role)">
+            {{role.name}}
+            <button matChipRemove [attr.aria-label]="'remove ' + role.name">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        }
+      </mat-chip-grid>
+      <input
+        name="currentFruit"
+        placeholder="Add role..."
+        #fruitInput
+        [(ngModel)]="currentRole"
+        [matChipInputFor]="chipGrid"
+        [matAutocomplete]="auto"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [formControl]="myControl"
+        (matChipInputTokenEnd)="add($event)"
+        (input)="change($event,filteredRoles(row.roles))"
+      />
+      <mat-autocomplete [formControl]="ac" autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selected(row.roles,$event); ">
+        @for (role of filteredRoles(row.roles); track role) {
+          <mat-option  [value]="role">{{role.name}}</mat-option>
+        }
+      </mat-autocomplete>
+
+      </mat-form-field>
+      </form>
+    </li>
+
+  </ul>
+
+</div>
 
