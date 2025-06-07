@@ -1,3 +1,8 @@
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-WDMUDEB6.js";
+
 // node_modules/zone.js/fesm2015/zone.js
 var global = globalThis;
 function __symbol__(name) {
@@ -1026,7 +1031,7 @@ function patchEventTarget(_global2, api, apis, patchOptions) {
         return { passive: true };
       }
       if (typeof options === "object" && options.passive !== false) {
-        return { ...options, passive: true };
+        return __spreadProps(__spreadValues({}, options), { passive: true });
       }
       return options;
     }
@@ -1088,7 +1093,7 @@ function patchEventTarget(_global2, api, apis, patchOptions) {
     const passiveEvents = _global2[zoneSymbol("PASSIVE_EVENTS")];
     function copyEventListenerOptions(options) {
       if (typeof options === "object" && options !== null) {
-        const newOptions = { ...options };
+        const newOptions = __spreadValues({}, options);
         if (options.signal) {
           newOptions.signal = options.signal;
         }
@@ -2380,4 +2385,4 @@ zone.js/fesm2015/zone.js:
    * License: MIT
    *)
 */
-//# sourceMappingURL=polyfills.js.map
+//# sourceMappingURL=zone__js.js.map
