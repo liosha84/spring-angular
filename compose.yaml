@@ -1,6 +1,5 @@
 services:
   spring-angular:
-    container_name: spring-angular
 
     build:
       context: .
@@ -17,7 +16,6 @@ services:
     networks:
       - springangularts
   postgresdb:
-    container_name: postgresdb
     image: postgres
     restart: always
 
@@ -31,6 +29,6 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=postgrespw
     expose:
-      - 5432:5432
+      - "5432"
 networks:
   springangularts:
